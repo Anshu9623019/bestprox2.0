@@ -1,7 +1,33 @@
-<div th:fragment="parent(content)">
-    <h1>this is parent fragment </h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quaerat consequuntur eius a voluptatum impedit
-        recusandae, harum aliquid explicabo iste doloribus sint culpa fuga voluptas cupiditate, neque animi eaque
-        facere.</p>
-    <div th:replace="${content}"></div>
-</div>
+<!DOCTYPE html>
+<html class="" lang="en" th:fragment="parent(content,title,script)" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}"> </title>
+    <link rel="stylesheet" href="/css/output.css" />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-gray-200 text-gray-900 dark:text-white dark:bg-gray-800">
+        <!-- Navbar -->      
+        <div data-th-replace="~{navbar :: navbar}" class="bg-blue-500"></div>
+        <!-- Main Content -->
+        <div class="p-4 h-screen w-full">
+            <div th:replace="${content}"></div>
+        </div>
+
+        <!-- Footer -->
+         <div class="">
+            <div data-th-replace="~{footer :: footer}" ></div>
+         </div>
+        
+    <script data-th-src="@{'/js/script.js'}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <th:block data-th-replace="${script}"></th:block>
+</body>
+
+</html>

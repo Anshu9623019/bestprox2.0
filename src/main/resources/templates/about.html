@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Page</title>
 </head>
 <body>
-     <!-- using fragment -->
-      <h1>This is about page</h1>
-      <div th:replace="~{base :: parent(~{:: .main_content})}">
-        <section id="main_content">
-            <h1>this is dynamic content</h1>
-        </section>
-      </div>
+  <section id="content" >This is about page</section>
+  <script>console.log("About Page")</script>
+  <script>console.log("About Page second")</script>
 </body>
 </html>
