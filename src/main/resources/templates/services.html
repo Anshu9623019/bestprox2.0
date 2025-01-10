@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{})}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Service page</title>
 </head>
 <body>
-    <h1>Services Page</h1>
-    <div th:replace="~{base :: parent(~{:: .second_content})}">
-        <h1 class="second_content">
-            this is second dynamic content
-        </h1>
-    </div>
+    <section id="content">
+        service bpage
+    </section>
 </body>
 </html>
